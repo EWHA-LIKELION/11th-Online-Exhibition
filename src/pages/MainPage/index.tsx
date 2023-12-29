@@ -39,7 +39,7 @@ const MainPage = () => {
 				<YearImage className="year-image" />
 			</div>
 			<MenuIcon state={isMenuOpen} setState={setIsMenuOpen} />
-			<MenuBar state={isMenuOpen} />
+			<MenuBar state={isMenuOpen} setState={setIsMenuOpen} />
 		</div>
 	);
 };

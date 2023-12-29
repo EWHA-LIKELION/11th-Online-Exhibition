@@ -3,8 +3,16 @@ import { useNavigate } from "react-router-dom";
 import "./menu-bar.scss";
 import { ReactComponent as Logo } from "../../assets/images/logo.svg";
 
-const MenuBar = ({ state }: { state: boolean }) => {
+type Props = {
+	state: boolean;
+	setState: (value: boolean) => void;
+};
+const MenuBar = ({ state, setState }: Props) => {
 	const nav = useNavigate();
+	const onClick = (item: string) => {
+		setState(false);
+		nav(`/${item.toLowerCase()}`);
+	};
 	const [className, setClassName] = useState<string>(
 		"menu-bar menu-bar-hidden"
 	);
@@ -20,7 +28,7 @@ const MenuBar = ({ state }: { state: boolean }) => {
 			<Logo className="logo-image" />
 			<div className="content">
 				{menuList.map((item) => (
-					<li key={item} onClick={() => nav(`/${item.toLowerCase()}`)}>
+					<li key={item} onClick={() => onClick(item)}>
 						{item}
 					</li>
 				))}

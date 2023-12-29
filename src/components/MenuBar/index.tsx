@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./menu-bar.scss";
 import { ReactComponent as Logo } from "../../assets/images/logo.svg";

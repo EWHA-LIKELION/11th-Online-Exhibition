@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import MenuIcon from "../../components/MenuIcon";
 import MenuBar from "../../components/MenuBar";
 
@@ -23,6 +23,7 @@ const MainPage = () => {
 				450
 			);
 	}, [isMenuOpen]);
+
 	return (
 		<div className="main-page-wrapper">
 			<LottieLight />

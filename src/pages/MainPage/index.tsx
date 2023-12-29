@@ -9,19 +9,25 @@ import { ReactComponent as YearImage } from "../../assets/images/year.svg";
 
 const MainPage = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
+	const body = document.querySelector("body");
+	const theme = document.querySelector("meta[name='theme-color']");
+	const handleResize = () => {
+		if (body!.clientWidth <= 450 && !isMenuOpen)
+			body!.setAttribute("style", "background-color: #252C37;");
+		else body!.removeAttribute("style");
+	};
 	useEffect(() => {
-		if (isMenuOpen)
-			document
-				.querySelector("meta[name='theme-color']")
-				?.setAttribute("content", "#f64725");
-		else
-			setTimeout(
-				() =>
-					document
-						.querySelector("meta[name='theme-color']")
-						?.setAttribute("content", "#1E252F"),
-				450
-			);
+		theme!.setAttribute("content", "#252C37");
+		window.addEventListener("resize", handleResize);
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
+	useEffect(() => {
+		handleResize();
+		if (isMenuOpen) theme!.setAttribute("content", "#f64725");
+		else setTimeout(() => theme!.setAttribute("content", "#252C37"), 450);
 	}, [isMenuOpen]);
 
 	return (

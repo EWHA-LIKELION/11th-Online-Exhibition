@@ -1,0 +1,84 @@
+$width: 100%;
+$height: 100svh;
+$transition--length: 0.5;
+
+.menu-bar {
+	position: absolute;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	width: $width;
+	height: $height;
+	&:before {
+		content: "";
+		position: absolute;
+		width: $width;
+		height: $height;
+		transition: transform cubic-bezier(0.77, 0, 0.175, 1) $transition--length +
+			s;
+		transform: translateX(0%) translateY(-100%);
+		background-color: var(--color-red);
+	}
+
+	.content {
+		position: absolute;
+		bottom: 0;
+		z-index: 200;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-bottom: 16px;
+	}
+
+	.logo-image {
+		opacity: 0;
+		position: absolute;
+		top: 26px;
+		left: 30px;
+	}
+	li {
+		cursor: pointer;
+		list-style: none;
+		width: 100%;
+		padding: 2.5vh 0;
+		color: black;
+		border-top: 0.5px solid black;
+		text-align: center;
+		font-family: var(--font-title);
+		font-size: 13.4vw;
+		@media (min-width: 450px) {
+			font-size: 60px;
+		}
+
+		transition-delay: $transition--length + s;
+		opacity: 0;
+		transform: translate(0%, 100%);
+		transition: transform 0.3s ease;
+	}
+}
+
+.menu-bar-active {
+	$menu--items--count: 5;
+	visibility: visible;
+	&:before {
+		transform: translateX(0%) translateY(0%);
+	}
+	.logo-image {
+		opacity: 1;
+	}
+	li {
+		opacity: 1;
+		transform: translateX(0%);
+		transition: opacity 0.2s ease, transform 0.2s ease, color 0.2s ease;
+		@for $i from 0 through $menu--items--count {
+			&:nth-child(#{$i}) {
+				transition-delay: $transition--length * $i / 8 + 0.2 + s;
+			}
+		}
+	}
+}
+
+.menu-bar-hidden {
+	visibility: hidden;
+}

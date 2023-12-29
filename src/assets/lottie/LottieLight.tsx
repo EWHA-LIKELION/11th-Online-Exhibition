@@ -10,5 +10,13 @@ export default function LottieLight() {
 			preserveAspectRatio: "xMidYMid slice",
 		},
 	};
-	return <Lottie options={defaultOptions} width={484} height={860} />;
+	return (
+		<Lottie
+			options={defaultOptions}
+			style={{
+				width: "100%",
+				height: "100vh",
+			}}
+		/>
+	);
 }

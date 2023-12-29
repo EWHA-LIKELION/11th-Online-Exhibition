@@ -1,0 +1,21 @@
+.main-page-wrapper {
+	font-size: 30px;
+	.title {
+		font-family: var(--font-title);
+	}
+	.text {
+		font-family: var(--font-text);
+	}
+	.text1 {
+		font-weight: 300;
+	}
+	.text2 {
+		font-weight: 400;
+	}
+	.text3 {
+		font-weight: 600;
+	}
+	.serif {
+		font-family: var(--font-serif);
+	}
+}

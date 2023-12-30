@@ -12,6 +12,7 @@ const MenuBar = ({ state, setState }: Props) => {
 	const onClick = (item: string) => {
 		setState(false);
 		nav(`/${item.toLowerCase()}`);
+		// setTimeout(() => nav(`/${item.toLowerCase()}`), 500);
 	};
 	const [className, setClassName] = useState<string>(
 		"menu-bar menu-bar-hidden"

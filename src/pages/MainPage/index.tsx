@@ -5,6 +5,7 @@ import MenuBar from "../../components/MenuBar";
 import "./main-page.scss";
 import LottieLight from "../../assets/lottie/LottieLight";
 import { ReactComponent as TitleImage } from "../../assets/images/title.svg";
+import { ReactComponent as TextImage } from "../../assets/images/text.svg";
 import { ReactComponent as YearImage } from "../../assets/images/year.svg";
 import useBackgroundColor from "../../utils/useBackgroundColor";
 
@@ -16,7 +17,7 @@ const MainPage = () => {
 			<LottieLight />
 			<div className="overlayer">
 				<TitleImage className="title-image" />
-				<div className="text">( The Warmest Moment )</div>
+				<TextImage className="text-image" />
 				<YearImage className="year-image" />
 			</div>
 			<MenuIcon state={isMenuOpen} setState={setIsMenuOpen} />

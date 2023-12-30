@@ -13,28 +13,33 @@ const useBackgroundColor = (
 			: color === "black"
 			? "#202020"
 			: color === "main"
-			? "#252C37"
+			? "#222834"
 			: "";
 
-	const handleResize = () => {
-		if (body!.clientWidth <= 450 && !isMenuOpen)
-			body!.setAttribute("style", `background-color: ${altColor()};`);
-		else body!.removeAttribute("style");
+	const setBgColor = () => {
+		if (body!.clientWidth <= 450) {
+			if (!isMenuOpen)
+				body!.setAttribute("style", `background-color: ${altColor()};`);
+			else if (color === "main" && isMenuOpen)
+				body!.setAttribute("style", `background-color: #F64725;`);
+		} else body!.removeAttribute("style");
 	};
 
 	useEffect(() => {
+		window.scrollTo(0, 0);
 		theme!.setAttribute("content", altColor());
-		window.addEventListener("resize", handleResize);
+		setBgColor();
+		window.addEventListener("resize", setBgColor);
 		return () => {
-			window.removeEventListener("resize", handleResize);
+			window.removeEventListener("resize", setBgColor);
 		};
 	}, []);
 
 	useEffect(() => {
-		if (isMenuOpen !== undefined) {
-			handleResize();
+		if (color === "main") {
+			setBgColor();
 			if (isMenuOpen) theme!.setAttribute("content", "#F64725");
-			else setTimeout(() => theme!.setAttribute("content", "#252C37"), 450);
+			else setTimeout(() => theme!.setAttribute("content", "#222834"), 430);
 		}
 	}, [isMenuOpen]);
 };

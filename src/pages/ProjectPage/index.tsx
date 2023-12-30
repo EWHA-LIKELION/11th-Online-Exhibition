@@ -22,7 +22,6 @@ const ProjectPage = () => {
 			setTimeout(() => nav(path.pathname + "/" + id), 1500);
 		}
 	};
-
 	return (
 		<div className="project-page-wrapper">
 			<Header

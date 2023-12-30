@@ -14,6 +14,7 @@ $transition--length: 0.5;
 		position: absolute;
 		width: $width;
 		height: $height;
+		transition-delay: 0.1s;
 		transition: transform cubic-bezier(0.77, 0, 0.175, 1) $transition--length +
 			s;
 		transform: translateX(0%) translateY(-100%);
@@ -63,6 +64,7 @@ $transition--length: 0.5;
 	visibility: visible;
 	&:before {
 		transform: translateX(0%) translateY(0%);
+		transition-delay: 0.1s;
 	}
 	.logo-image {
 		opacity: 1;
@@ -81,4 +83,5 @@ $transition--length: 0.5;
 
 .menu-bar-hidden {
 	visibility: hidden;
+	transition-delay: 0.7s;
 }

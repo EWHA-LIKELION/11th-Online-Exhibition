@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import useParagraph from "../../utils/useParagraph";
 import "./drawer.scss";
 import { data } from "../../assets/data/epilogue";
@@ -20,8 +20,23 @@ const Drawer = ({
 	const [currentData, setCurrentData] = useState<any[]>(data[part - 1]);
 	const [clickedName, setClickedName] = useState<number>(1);
 	const [className, setClassName] = useState<string>("close");
+	const partRef = useRef<HTMLDivElement>(null);
 	useEffect(() => {
 		setCurrentData(data[part - 1]);
+		if (part === openedPart) {
+			partRef!.current?.setAttribute(
+				"style",
+				"background-color: rgba(255, 255, 255, 0.1); transition: 0.1s;"
+			);
+			setTimeout(
+				() =>
+					partRef!.current?.setAttribute(
+						"style",
+						"background-color: transparent; transition: 0.3s;"
+					),
+				200
+			);
+		}
 		if (isInitialClick) {
 			if (part === openedPart) {
 				setClassName("open");
@@ -31,7 +46,7 @@ const Drawer = ({
 			if (part === openedPart)
 				setTimeout(() => {
 					setClassName("open");
-				}, 1300);
+				}, 1100);
 			else setClassName("close");
 		}
 	}, [openedPart]);
@@ -47,7 +62,11 @@ const Drawer = ({
 
 	return (
 		<div className="drawer-wrapper">
-			<div className="title-box" onClick={() => setOpenedPart(part)}>
+			<div
+				className="title-box"
+				ref={partRef}
+				onClick={() => setOpenedPart(part)}
+			>
 				<div>{altPart(part)}</div>
 				<div>{currentData.length}</div>
 			</div>

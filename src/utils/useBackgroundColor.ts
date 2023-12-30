@@ -39,7 +39,7 @@ const useBackgroundColor = (
 		if (color === "main") {
 			setBgColor();
 			if (isMenuOpen) theme!.setAttribute("content", "#F64725");
-			else setTimeout(() => theme!.setAttribute("content", "#222834"), 430);
+			else setTimeout(() => theme!.setAttribute("content", "#222834"), 450);
 		}
 	}, [isMenuOpen]);
 };

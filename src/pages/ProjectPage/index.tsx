@@ -19,7 +19,7 @@ const ProjectPage = () => {
 	const onClick = (id: number) => {
 		if (clickedId === 0) {
 			setClickedId(id);
-			setTimeout(() => nav(path.pathname + "/" + id), 1500);
+			setTimeout(() => nav(path.pathname + "/" + id), 1400);
 		}
 	};
 	return (

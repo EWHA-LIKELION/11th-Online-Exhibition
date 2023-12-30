@@ -17,13 +17,8 @@ const MenuBar = ({ state, setState }: Props) => {
 		"menu-bar menu-bar-hidden"
 	);
 	useEffect(() => {
-		// if (state) setTimeout(() => setClassName("menu-bar menu-bar-active"), 100);
 		if (state) setClassName("menu-bar menu-bar-active");
-		else {
-			// setClassName("menu-bar");
-			// setTimeout(() => setClassName("menu-bar menu-bar-hidden"), 700);
-			setClassName("menu-bar menu-bar-hidden");
-		}
+		else setClassName("menu-bar menu-bar-hidden");
 	}, [state]);
 	return (
 		<div className={className}>

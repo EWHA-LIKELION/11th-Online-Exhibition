@@ -46,9 +46,11 @@
 			margin-bottom: 18px;
 			.name {
 				color: #828282;
-				font-family: var(--font-text);
-				font-weight: 300;
-				font-size: 14px;
+				font: {
+					family: var(--font-text);
+					weight: 300;
+					size: 14px;
+				}
 				&.clicked {
 					color: var(--color-red);
 					font-weight: 600;
@@ -59,9 +61,11 @@
 		.content {
 			width: calc(100% - 66px);
 			color: var(--color-black);
-			font-family: var(--font-text);
-			font-weight: 400;
-			font-size: 14px;
+			font: {
+				family: var(--font-text);
+				weight: 400;
+				size: 14px;
+			}
 			line-height: 140%;
 		}
 
@@ -72,9 +76,11 @@
 			gap: 15px;
 			padding: 30px 0;
 			color: var(--color-black);
-			font-family: var(--font-text);
-			font-weight: 600;
-			font-size: 12px;
+			font: {
+				family: var(--font-text);
+				weight: 600;
+				size: 12px;
+			}
 		}
 	}
 }

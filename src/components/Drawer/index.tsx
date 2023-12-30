@@ -28,17 +28,6 @@ const Drawer = ({ part, openedPart, setOpenedPart }: Props) => {
 			: id === 3
 			? "Back-End"
 			: "Staff";
-	const splitRender = (content: string) =>
-		content.includes("\n") ? (
-			content.split("\n").map((line, idx) => (
-				<span key={idx}>
-					{line}
-					<br />
-				</span>
-			))
-		) : (
-			<span>{content}</span>
-		);
 
 	return (
 		<div className="drawer-wrapper">
@@ -80,3 +69,15 @@ const Drawer = ({ part, openedPart, setOpenedPart }: Props) => {
 };
 
 export default Drawer;
+
+export const splitRender = (content: string) =>
+	content.includes("\n") ? (
+		content.split("\n").map((line, idx) => (
+			<span key={idx}>
+				{line}
+				<br />
+			</span>
+		))
+	) : (
+		<span>{content}</span>
+	);

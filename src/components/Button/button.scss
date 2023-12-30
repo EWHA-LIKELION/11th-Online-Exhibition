@@ -3,7 +3,7 @@
 	display: flex;
 	justify-content: center;
 
-	.inner {
+	.btn {
 		width: calc(100% - 40px);
 		height: 55px;
 		border-radius: 2px;
@@ -13,9 +13,19 @@
 		align-items: center;
 		background-color: var(--color-red);
 		color: white;
-		font-family: var(--font-text);
-		font-weight: 400;
-		font-size: 15px;
+		font: {
+			family: var(--font-text);
+			weight: 400;
+			size: 15px;
+		}
 		text-decoration: none;
+	}
+
+	.btn.float {
+		position: fixed;
+		bottom: 25px;
+		@media (min-width: 450px) {
+			width: calc(450px - 40px);
+		}
 	}
 }

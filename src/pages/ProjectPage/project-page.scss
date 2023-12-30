@@ -9,9 +9,11 @@
 
 	.des-text {
 		color: var(--color-red);
-		font-family: var(--font-title);
-		font-style: italic;
-		font-size: 14px;
+		font: {
+			family: var(--font-title);
+			style: italic;
+			size: 14px;
+		}
 		text-align: center;
 		padding: 16px 0 30px 0;
 	}
@@ -41,7 +43,7 @@
 		.off {
 			background-image: url("../../assets/images/project/light_off.svg");
 			margin-top: -9px;
-			animation: disappear 1.5s;
+			animation: disappear 1.5s ease-out;
 			@keyframes disappear {
 				0% {
 					opacity: 0;

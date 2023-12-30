@@ -53,6 +53,7 @@ const Modal = ({ isOpen, closer }: Props) => {
 							<a
 								href="https://www.instagram.com/likelion_ewha"
 								target="_blank"
+								rel="noreferrer"
 								className="text link"
 							>
 								@likelion_ewha

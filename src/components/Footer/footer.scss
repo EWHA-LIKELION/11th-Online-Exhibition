@@ -18,9 +18,11 @@
 	}
 
 	.text {
-		font-family: var(--font-text);
-		font-weight: 300;
-		font-size: 10px;
+		font: {
+			family: var(--font-text);
+			weight: 300;
+			size: 10px;
+		}
 		color: var(--color-black);
 		text-align: center;
 	}

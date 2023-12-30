@@ -3,15 +3,21 @@ import "./button.scss";
 
 type Props = {
 	text: string;
+	onClick: (value?: any) => void;
 	isFloating?: boolean;
 };
-const Button = ({ text }: Props) => {
+const Button = ({ text, onClick, isFloating }: Props) => {
 	return (
 		<div className="button-wrapper">
-			{/* <a href="/" className="inner">
-				{text}
-			</a> */}
-			<div className="inner">{text}</div>
+			{isFloating ? (
+				<a href="/" target="_blank" className="inner" onClick={onClick}>
+					{text}
+				</a>
+			) : (
+				<div className="inner" onClick={onClick}>
+					{text}
+				</div>
+			)}
 		</div>
 	);
 };

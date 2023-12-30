@@ -6,18 +6,33 @@ type Props = {
 	part: number; // 1 PM 2 FE 3 BE 4 STAFF
 	openedPart: number;
 	setOpenedPart: (value: number) => void;
+	isInitialClick: boolean;
+	setIsInitialClick: (value: boolean) => void;
 };
-const Drawer = ({ part, openedPart, setOpenedPart }: Props) => {
+const Drawer = ({
+	part,
+	openedPart,
+	setOpenedPart,
+	isInitialClick,
+	setIsInitialClick,
+}: Props) => {
 	const [currentData, setCurrentData] = useState<any[]>(data[part - 1]);
 	const [clickedName, setClickedName] = useState<number>(1);
 	const [className, setClassName] = useState<string>("close");
 	useEffect(() => {
 		setCurrentData(data[part - 1]);
-		if (part === openedPart)
-			setTimeout(() => {
+		if (isInitialClick) {
+			if (part === openedPart) {
 				setClassName("open");
-			}, 1600);
-		else setClassName("close");
+				setIsInitialClick(false);
+			}
+		} else {
+			if (part === openedPart)
+				setTimeout(() => {
+					setClassName("open");
+				}, 1300);
+			else setClassName("close");
+		}
 	}, [openedPart]);
 
 	const altPart = (id: number) =>

@@ -5,6 +5,7 @@ import "./epilogue-page.scss";
 
 const EpiloguePage = () => {
 	const [openedPart, setOpenedPart] = useState<number>(0);
+	const [isInitialClick, setIsInitialClick] = useState<boolean>(true);
 	useEffect(() => {
 		document
 			.querySelector("meta[name='theme-color']")
@@ -18,6 +19,8 @@ const EpiloguePage = () => {
 					part={i}
 					openedPart={openedPart}
 					setOpenedPart={setOpenedPart}
+					isInitialClick={isInitialClick}
+					setIsInitialClick={setIsInitialClick}
 					key={i}
 				/>
 			))}

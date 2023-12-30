@@ -20,6 +20,10 @@
 			font-family: var(--font-title);
 			font-size: 1rem;
 			padding: 14px 0 22px 0;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
 		}
 		.year-image {
 			height: 30px;

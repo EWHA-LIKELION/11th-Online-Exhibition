@@ -1,5 +1,6 @@
 .epilogue-page-wrapper {
 	background-color: var(--color-black);
 	width: 100%;
-	min-height: 100svh;
+	min-height: calc(100svh - 64px);
+	padding-bottom: 64px;
 }

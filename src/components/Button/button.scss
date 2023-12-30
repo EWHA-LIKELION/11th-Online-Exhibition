@@ -24,6 +24,7 @@
 	.btn.float {
 		position: fixed;
 		bottom: 25px;
+		z-index: 999;
 		@media (min-width: 450px) {
 			width: calc(450px - 40px);
 		}

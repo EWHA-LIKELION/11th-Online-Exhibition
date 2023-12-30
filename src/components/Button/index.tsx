@@ -14,6 +14,7 @@ const Button = ({ text, onClick, url, isFloating }: Props) => {
 				<a
 					href={url}
 					target="_blank"
+					rel="noreferrer"
 					className={`btn${isFloating ? " float" : ""}`}
 				>
 					{text}

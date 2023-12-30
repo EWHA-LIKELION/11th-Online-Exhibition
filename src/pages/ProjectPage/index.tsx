@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import useBackgroundColor from "../../utils/useBackgroundColor";
 import Header from "../../components/Header";
 
 import "./project-page.scss";
@@ -11,14 +12,9 @@ import { ReactComponent as HackLight2 } from "../../assets/images/project/hack_2
 import { ReactComponent as HackLight3 } from "../../assets/images/project/hack_3.svg";
 
 const ProjectPage = () => {
+	useBackgroundColor("gray");
 	const path = useLocation();
 	const nav = useNavigate();
-	useEffect(() => {
-		document
-			.querySelector("meta[name='theme-color']")
-			?.setAttribute("content", "#F0EFED");
-	}, []);
-
 	const [clickedId, setClickedId] = useState<number>(0);
 	const onClick = (id: number) => {
 		if (clickedId === 0) {

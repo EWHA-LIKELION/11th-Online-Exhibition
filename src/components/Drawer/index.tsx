@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import useParagraph from "../../utils/useParagraph";
 import "./drawer.scss";
 import { data } from "../../assets/data/epilogue";
 
@@ -63,7 +64,7 @@ const Drawer = ({
 					))}
 				</div>
 				<div className="content">
-					{splitRender(currentData[clickedName - 1].content)}
+					{useParagraph(currentData[clickedName - 1].content)}
 				</div>
 				<div className="info">
 					<div className="role">{`11기 ${
@@ -84,15 +85,3 @@ const Drawer = ({
 };
 
 export default Drawer;
-
-export const splitRender = (content: string) =>
-	content.includes("\n") ? (
-		content.split("\n").map((line, idx) => (
-			<span key={idx}>
-				{line}
-				<br />
-			</span>
-		))
-	) : (
-		<span>{content}</span>
-	);

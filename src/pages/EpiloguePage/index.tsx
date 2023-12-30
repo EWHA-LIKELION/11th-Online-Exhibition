@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import useBackgroundColor from "../../utils/useBackgroundColor";
 import Header from "../../components/Header";
 import Drawer from "../../components/Drawer";
 import "./epilogue-page.scss";
@@ -6,11 +7,7 @@ import "./epilogue-page.scss";
 const EpiloguePage = () => {
 	const [openedPart, setOpenedPart] = useState<number>(0);
 	const [isInitialClick, setIsInitialClick] = useState<boolean>(true);
-	useEffect(() => {
-		document
-			.querySelector("meta[name='theme-color']")
-			?.setAttribute("content", "#202020");
-	}, []);
+	useBackgroundColor("black");
 	return (
 		<div className="epilogue-page-wrapper">
 			<Header text="Epilogue" color="white" />

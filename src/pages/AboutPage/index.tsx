@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import useBackgroundColor from "../../utils/useBackgroundColor";
 import Header from "../../components/Header";
 import ImageSlide from "../../components/ImageSlide";
 import TitleSection from "../../components/TitleSection";
@@ -11,11 +12,7 @@ import { curriculumList, activityList } from "../../assets/data/about";
 const AboutPage = () => {
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 	const [selectedPart, setSelectedPart] = useState<number>(0);
-	useEffect(() => {
-		document
-			.querySelector("meta[name='theme-color']")
-			?.setAttribute("content", "#F0EFED");
-	}, []);
+	useBackgroundColor("gray");
 	return (
 		<>
 			<div className="about-page-wrapper">

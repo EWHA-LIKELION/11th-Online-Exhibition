@@ -2,14 +2,8 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import useBackgroundColor from "../../utils/useBackgroundColor";
 import Header from "../../components/Header";
-
 import "./project-page.scss";
-import { ReactComponent as GradLight1 } from "../../assets/images/project/grad_1.svg";
-import { ReactComponent as GradLight2 } from "../../assets/images/project/grad_2.svg";
-import { ReactComponent as GradLight3 } from "../../assets/images/project/grad_3.svg";
-import { ReactComponent as HackLight1 } from "../../assets/images/project/hack_1.svg";
-import { ReactComponent as HackLight2 } from "../../assets/images/project/hack_2.svg";
-import { ReactComponent as HackLight3 } from "../../assets/images/project/hack_3.svg";
+import { ProjectType, projectList } from "../../assets/data/project";
 
 const ProjectPage = () => {
 	useBackgroundColor("gray");
@@ -41,7 +35,7 @@ const ProjectPage = () => {
 							className="light-container"
 							onClick={() => onClick(item.id)}
 						>
-							{item.image}
+							<img src={item.image} alt={item.title} />
 							<div
 								className={clickedId === item.id ? "rect off" : "rect on"}
 								style={
@@ -73,59 +67,3 @@ const ProjectPage = () => {
 };
 
 export default ProjectPage;
-
-type ProjectType = {
-	id: number;
-	title: string;
-	image: JSX.Element;
-	top: number;
-	left: number;
-};
-const projectList: any = {
-	graduation: [
-		{
-			id: 1,
-			title: "drag on",
-			image: <GradLight1 />,
-			top: 4,
-			left: -2,
-		},
-		{
-			id: 2,
-			title: "friend-ed map",
-			image: <GradLight2 />,
-			top: 2,
-			left: 0,
-		},
-		{
-			id: 3,
-			title: "what do you sing",
-			image: <GradLight3 />,
-			top: 5,
-			left: 16,
-		},
-	],
-	hackathon: [
-		{
-			id: 1,
-			title: "bora",
-			image: <HackLight1 />,
-			top: 6,
-			left: 4,
-		},
-		{
-			id: 2,
-			title: "wallethy",
-			image: <HackLight2 />,
-			top: 12,
-			left: 20,
-		},
-		{
-			id: 3,
-			title: "verny",
-			image: <HackLight3 />,
-			top: 4,
-			left: -12,
-		},
-	],
-};

@@ -39,8 +39,8 @@ export default MenuBar;
 
 const menuList: string[] = [
 	"ABOUT",
-	"HACKATHON",
 	"GRADUATION",
+	"HACKATHON",
 	"EPILOGUE",
 	"CREDITS",
 ];

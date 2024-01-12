@@ -31,7 +31,7 @@
 	}
 
 	.scroll-bar {
-		width: 30%;
+		width: 23%;
 		height: 3px;
 		background-color: var(--color-red);
 		position: absolute;
@@ -43,12 +43,15 @@
 		left: 0;
 	}
 	.index2 {
-		left: 25%;
+		left: 20%;
 	}
 	.index3 {
-		left: 45%;
+		left: 40%;
 	}
 	.index4 {
-		left: 70%;
+		left: 60%;
+	}
+	.index5 {
+		left: 80%;
 	}
 }

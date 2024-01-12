@@ -5,9 +5,10 @@ import "swiper/swiper.scss";
 import "./image-slide.scss";
 
 import img1 from "../../assets/images/about1.png";
-import img2 from "../../assets/images/about2.png";
+import img2 from "../../assets/images/about2.jpg";
 import img3 from "../../assets/images/about3.png";
 import img4 from "../../assets/images/about4.png";
+import img5 from "../../assets/images/about5.png";
 
 const ImageSlide = () => {
 	const [swiperIndex, setSwiperIndex] = useState<number>(0);
@@ -35,4 +36,4 @@ const ImageSlide = () => {
 
 export default ImageSlide;
 
-const imageList: string[] = [img1, img2, img3, img4];
+const imageList: string[] = [img1, img2, img3, img4, img5];

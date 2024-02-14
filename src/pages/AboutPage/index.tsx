@@ -13,6 +13,8 @@ const AboutPage = () => {
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 	const [selectedPart, setSelectedPart] = useState<number>(0);
 	useBackgroundColor("gray");
+	const url =
+		"https://goofy-bag-4c4.notion.site/12-f513276235af439ca5da19cbc75e6ebe";
 	return (
 		<>
 			<div className="about-page-wrapper">
@@ -76,7 +78,8 @@ const AboutPage = () => {
 				</div>
 				<Button
 					text="멋쟁이사자처럼 12기 아기사자 모집 →"
-					onClick={() => setIsModalOpen(true)}
+					/* onClick={() => setIsModalOpen(true)} */
+					url={url}
 				/>
 				<Footer />
 			</div>
